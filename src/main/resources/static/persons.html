@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Persons</title>
+    <link href="persons.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="persons.js"></script>
+</head>
+<body>
+    <div id="in" class="test">
+        <form id="form">
+            <input type="text" id="id" class="element" placeholder="ID"/>
+                    <span style="color:red" id="idErr"></span><br/>
+            <input type="text" id="lastName" class="element" placeholder="Фамилия"/>
+                    <span style="color:red" id="lastNameErr"></span><br/>
+            <input type="text" id="firstName" class="element" placeholder="Имя"/>
+                    <span style="color:red" id="firstNameErr"></span><br/>
+            <input type="text" id="middleName" class="element" placeholder="Отчество"/>
+                    <span style="color:red" id="middleNameErr"></span><br/>
+            Дата рождения <input type="date" id="birthDate" placeholder="Дата рождения"/>
+                    <span style="color:red" id="birthDateErr"></span><br/>
+        </form>
+        <div class="element">
+            <button id="add">Добавить</button>
+            <button id="get">Получить</button>
+            <button id="update">Обновить</button>
+            <button id="delete">Удалить</button>
+        </div>
+        <div>
+            <p id="info"></p>
+        </div>
+    </div>
+    <div id="out" class="test">
+            <div class="element">
+                <button id="get-all">Заполнить таблицу</button>
+                <button id="to-process">Обработать данные</button>
+            </div>
+            <table id="table" border="2px">
+                <tr id="head">
+                    <th></th><th>ID</th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Дата рождения</th><th>Комментарий</th>
+                </tr>
+            </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+#in {
+    float : left;
+    margin: 2%;
+    background: #EFF5FB;
+}
+#out {
+    float : left;
+    margin: 2%;
+    background: #EFF5FB;
+}
+.test{
+    border-color: #848484;
+    border-style: solid;
+    border-width: medium;
+    padding: 10px;
+}
+.element{
+    margin: 1%;
+}
+
+table {
+    font-family:  Geneva, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td:first-child {
+    background: #848484;
+    color: white;
+    padding: 10px 20px;
+}
+th, td {
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: black;
+}
+td {
+    background: #CEECF5;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
