@@ -1,85 +1,42 @@
 package com.test.task.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "person")
 public class Person {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "person_id_seq")
+    @SequenceGenerator(name = "person_id_seq", sequenceName = "person_id_seq", allocationSize = 1)
     private Integer id;
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "middle_name")
     private String middleName;
+
+    @Column(name = "birth_date")
     private LocalDate birthDate;
+
+    @Column(name = "comment")
     private String comment;
+
+    @Column(name = "update_date")
     private OffsetDateTime updateDate;
 
     public Person(){
-
-    }
-
-    @Column(name = "last_name")
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    @Column(name = "first_name")
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    @Column(name = "middle_name")
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
-    @Column(name = "birth_date")
-    public LocalDate getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    @Column(name = "comment")
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    @Column(name = "update_date")
-    public OffsetDateTime getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(OffsetDateTime updateDate) {
-        this.updateDate = updateDate;
     }
 }
