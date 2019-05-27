@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
 
+    var url = "http://localhost:8080";
+
     $("#get").click(function () {
 
         clearErrors();
@@ -8,7 +10,7 @@ $(document).ready(function () {
         if(regEx.test($("#id").val())){
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/api/persons/get/" + $("#id").val(),
+                url: url + "/api/persons/get/" + $("#id").val(),
                 success: function (answer) {showPerson(answer)}
             }).fail(function(jqXHR){
                 alert(JSON.parse(jqXHR.responseText).message);
@@ -22,7 +24,7 @@ $(document).ready(function () {
         if(regEx.test($("#id").val())){
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/api/persons/delete/" + $("#id").val()
+                url: url + "/api/persons/delete/" + $("#id").val()
             }).fail(function(jqXHR){
                 alert(JSON.parse(jqXHR.responseText).message);
             }).done(function () {alert("Удалено!")});
@@ -37,7 +39,7 @@ $(document).ready(function () {
                 /^\d{4}([.\/-])\d{2}\1\d{2}$/)){
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/api/persons/update",
+                url: url + "/api/persons/update",
                 contentType : 'application/json; charset=UTF-8',
                 dataType: 'json',
                 data: JSON.stringify({
@@ -61,7 +63,7 @@ $(document).ready(function () {
             /^\d{4}([.\/-])\d{2}\1\d{2}$/)){
             $.ajax({
                 type: "POST",
-                url: "http://localhost:8080/api/persons/add",
+                url: url + "/api/persons/add",
                 contentType : 'application/json; charset=UTF-8',
                 dataType: 'json',
                 data: JSON.stringify({
@@ -81,7 +83,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/api/persons/get-all",
+            url: url + "/api/persons/get-all",
             contentType : 'application/json; charset=UTF-8',
             dataType: 'json',
             success: function (answer) {updateTable(answer);}
@@ -96,7 +98,7 @@ $(document).ready(function () {
         });
         $.ajax({
             type: "POST",
-            url: "http://localhost:8080/api/persons/array",
+            url: url + "/api/persons/array",
             contentType : 'application/json; charset=UTF-8',
             dataType: 'json',
             data: JSON.stringify(data),
